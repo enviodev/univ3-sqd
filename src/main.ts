@@ -47,13 +47,13 @@ processor.run(new TypeormDatabase({ supportHotBlocks: true }), async (ctx) => {
 });
 
 function extractData(evmLog: any): {
-  recipient: string;
   sender: string;
+  recipient: string;
   amount0: bigint;
   amount1: bigint;
   sqrtPriceX96: bigint;
   liquidity: bigint;
-  tick: bigint;
+  tick: number;
 } {
   if (evmLog.topics[0] === events.Swap.topic) {
     return events.Swap.decode(evmLog);

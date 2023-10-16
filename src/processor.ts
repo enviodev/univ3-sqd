@@ -1,5 +1,5 @@
 import { EvmBatchProcessor } from "@subsquid/evm-processor";
-import { events } from "./abi/SwapContract;
+import { events } from "./abi/SwapContract";
 import { lookupArchive } from "@subsquid/archive-registry";
 
 export const SWAP_CONTRACT =
