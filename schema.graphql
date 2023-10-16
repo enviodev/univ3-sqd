@@ -1,7 +1,7 @@
 type Swap @entity {
   id: ID!
-  sender: Bytes! # address
-  recipient: Bytes! # address
+  sender: String! # address
+  recipient: String! # address
   amount0: BigInt! # int256
   amount1: BigInt! # int256
   sqrtPriceX96: BigInt! # uint160
@@ -9,5 +9,5 @@ type Swap @entity {
   tick: Int! # int24
   blockNumber: BigInt!
   blockTimestamp: BigInt!
-  transactionHash: Bytes!
+  transactionHash: String!
 }
