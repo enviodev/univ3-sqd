@@ -1,1 +1,1 @@
-export * from "./gravatar.model"
+export * from "./swap.model"
