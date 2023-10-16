@@ -1,0 +1,33 @@
+{
+  "name": "gravatar-squid",
+  "private": true,
+  "scripts": {
+    "build": "rm -rf lib && tsc",
+    "update": "npx npm-check-updates --filter /subsquid/ --upgrade && npm i -f",
+    "db:migrate": "npx squid-typeorm-migration apply",
+    "squid-etl:start": "node lib/processor.js",
+    "squid-api:start": "squid-graphql-server"
+  },
+  "dependencies": {
+    "@ethersproject/abi": "^5.7.0",
+    "@subsquid/archive-registry": "^3.1.0",
+    "@subsquid/big-decimal": "^1.0.0",
+    "@subsquid/evm-processor": "^1.7.0",
+    "@subsquid/graphql-server": "4.2.0",
+    "@subsquid/typeorm-migration": "1.2.0",
+    "@subsquid/typeorm-store": "1.2.0",
+    "dotenv": "^16.3.1",
+    "ethers": "^6.6.0",
+    "pg": "^8.11.0",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@subsquid/evm-typegen": "3.2.0",
+    "@subsquid/typeorm-codegen": "1.2.0",
+    "@typechain/ethers-v6": "^0.4.0",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "typechain": "^8.2.0",
+    "typescript": "~5.1.3"
+  }
+}
