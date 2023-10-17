@@ -24,6 +24,16 @@ processor.run(new TypeormDatabase({ supportHotBlocks: true }), async (ctx) => {
         tick,
       } = extractData(e);
 
+      // console.log(
+      //   recipient,
+      //   sender,
+      //   amount0,
+      //   amount1,
+      //   sqrtPriceX96,
+      //   liquidity,
+      //   tick
+      // );
+
       // // create the swap entity
       swaps.set(
         // concatentate the transaction hash and transaction index to create a unique id
@@ -42,7 +52,7 @@ processor.run(new TypeormDatabase({ supportHotBlocks: true }), async (ctx) => {
           transactionHash: e.transaction?.hash! + String(e.transactionIndex),
         })
       );
-    
+    }
   }
 
   await ctx.store.upsert([...swaps.values()]);
